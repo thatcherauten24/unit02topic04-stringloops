@@ -10,7 +10,7 @@ public static String reverseCharacters(String str) {
   return str2;
 }
 
-public static void indexesOfAll(String text, String searchTerm){
+public static int[] indexesOfAll(String text, String searchTerm){
   int index = 0;
   int total = 0;
   for (index = 0; index < text.length(); index ++) {
@@ -26,10 +26,11 @@ public static void indexesOfAll(String text, String searchTerm){
       appearanceNum ++;
     }
   }
-  System.out.println(Arrays.toString(appearances));
+  return appearances;
 }
   public static void main(String[] args) {
-indexesOfAll("attack", "t");
-  
+    //System.out.println(reverseCharacters("academy"));
+    //System.out.println(Arrays.toString(indexesOfAll("attack", "t")));
+    
   }
 }
