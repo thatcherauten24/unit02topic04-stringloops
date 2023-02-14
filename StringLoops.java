@@ -11,17 +11,25 @@ public static String reverseCharacters(String str) {
 }
 
 public static void indexesOfAll(String text, String searchTerm){
-  int[] appearances = new int[] {};
   int index = 0;
-  for (index = 0; index <= text.length(); index ++) {
+  int total = 0;
+  for (index = 0; index < text.length(); index ++) {
     if (searchTerm.equals(text.substring(index, index + 1))) {
-      appearances[index] = index;
+      total++;
     }
   }
-  Arrays.toString(appearances);
-} 
+  int[] appearances = new int[total];
+  int appearanceNum = 0;
+  for (index = 0; index < text.length(); index ++) {
+    if (searchTerm.equals(text.substring(index, index + 1))) {
+      appearances[appearanceNum] = index;
+      appearanceNum ++;
+    }
+  }
+  System.out.println(Arrays.toString(appearances));
+}
   public static void main(String[] args) {
-indexesOfAll("attack", "a");
+indexesOfAll("attack", "t");
   
   }
 }
