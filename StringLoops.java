@@ -1,4 +1,3 @@
-import java.util.Arrays;
 public class StringLoops {
 
 public static String reverseCharacters(String str) {
@@ -37,19 +36,21 @@ public static boolean hasRepeatedConsecutives(String word) {
       twoLetters = true;
     }
   }
-
-
-
-
   return twoLetters;
 }
 
 public static String reverseWords(String phrase) {
-  int index = phrase.length();
-  for (index = phrase.length(); index >= 0; index--) {
-
+  String phrase2 = " " + phrase + " ";
+  String revPhrase = "";
+  int index = 0;
+  int firstLetter = 0;
+  for (index = 0; index < phrase2.length(); index++) {
+    if(phrase2.substring(index, index+1).equals(" ")){
+      revPhrase = phrase2.substring(firstLetter, index) + revPhrase;
+      firstLetter = index;
+    }    
   }
-
+  return revPhrase;
 }
   public static void main(String[] args) {
     //System.out.println(reverseCharacters("academy"));
